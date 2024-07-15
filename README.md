@@ -1,51 +1,69 @@
-#🎉 Welcome to My Programming Course Answers! 🎉
+# 🎉 Welcome to My MOOC Programming Course Answers! 🎉
 
-Hey there! Welcome to my awesome repository where I've compiled all my answers to the programming course I just finished. Get ready for a fun and easy learning journey through the world of Python programming! 🐍
-🚀 Course Overview
+Hey there! Welcome to my awesome repository where I've compiled all my answers to the MOOC Python programming course 🐍!
 
+## 🚀 Course Overview
 This course took me on a fantastic adventure through the basics and beyond of Python programming. From variables and loops to classes and files, I’ve covered it all! Here’s a sneak peek at what’s inside:
-
-#📂 Repository Structure
-
+### 📂 Repository Structure
 Dive into each module to see my answers and notes:
+#### Part 1
+1. Getting started
+2. Information from the user
+3. More about variables
+4. Arithmetic operations
+5. Conditional statements
 
-    01_Introduction_to_Programming
-        🌟 Getting started with programming languages
-        🔧 Setting up the dev environment
-        📝 My very first Python program
+#### Part 2
+1. Programming terminology
+2. More conditionals
+3. Combining conditionals
+4. Simple loops
 
-    02_Basic_Python_Syntax
-        🔤 Variables and data types
-        ➕ Operators
-        💬 Input and output
+#### Part 3
+1. Loops with conditions
+2. Working with strings
+3. More loops
+4. Defining functions
 
-    03_Control_Structures
-        ❓ Conditional statements
-        🔁 Loop-de-loops (for and while)
+#### Part 4
+1. The Visual Studio Code editor, Python interpreter and built-in debugging tool
+2. More functions
+3. Lists
+4. Definite iteration
+5. Print statement formatting
+6. More strings and lists
 
-    04_Functions_and_Modules
-        📞 Defining and calling functions
-        📦 Importing and using modules
-        🌐 Understanding scope
+#### Part 5
+1. More lists
+2. References
+3. Dictionary
+4. Tuple
 
-    05_Data_Structures
-        📚 Lists, tuples, and dictionaries
-        🧠 List comprehensions
-        🔄 Iterating through structures
+#### Part 6
+1. Reading files
+2. Writing files
+3. Handling errors
+4. Local and global variables
 
-    06_File_Handling
-        📂 Reading from and writing to files
-        🚨 Handling file exceptions
+#### Part 7
+1. Modules
+2. Randomness
+3. Times and dates
+4. Data processing
+5. Creating your own modules
+6. more Python features
 
-    07_Object-Oriented_Programming
-        🏛️ Creating classes and objects
-        🧬 Inheritance and polymorphism
-        🔒 Encapsulation and abstraction
+#### Part 8
+1. Objects and Methods
+2. Classes and Objects
+3. Defining classes
+4. Defining methods
+5. More examples of classes
 
-#🎓 How to Use This Repository
+and many more 🧠!
 
-Explore each directory to find:
+## 🌟 Repository Status: On Progress 🔥
+This repository is still a work in progress. Python is vast and versatile, and there's more than one way to crack a code! If you have different solutions or better ways to tackle the problems, I'd love to see them. Dive in, explore, and if you think there’s another—or a better—way, share your thoughts! After all, the beauty of programming lies in its diversity of approaches.
 
-    README.md: An overview of the module’s topics.
-    Exercises: My solutions with comments and explanations.
-    Assignments: Completed assignments with detailed thought processes.
+![](https://github.com/ameliacitradewi/ameliacitradewi/blob/main/Quotes.png)
+> Also, it's okay to take a break
