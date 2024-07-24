@@ -6,13 +6,17 @@ while True:
     if command == "1":
         name = input("name: ")
         if name in phone:
-            print(phone[name])
+            for number in phone[name]:
+                print(number)
         else:
             print("no number")
     elif command == "2":
         name = input("name: ")
         numbers = (input("number: "))
-        phone[name] = numbers
+        if name in phone:
+            phone[name].append(numbers)
+        else:
+            phone[name] = [numbers]
         print("ok!")
     else:
         print("quitting...")
