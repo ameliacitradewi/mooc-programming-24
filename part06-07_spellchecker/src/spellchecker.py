@@ -1,7 +1,20 @@
 # write your solution here
-text = "We use ptython to make a spell checker"
-lst_text = text.split(" ")
+text = input()
+wordlist = []
+
+check = text.split()
+checked_text = []
 
 with open("wordlist.txt") as file:
-    for line in line:
-        
+    for line in file:
+        line = line.replace("\n", "")
+        word = line.strip().lower()
+        wordlist.append(word)
+
+for char in check:
+    if char.lower() not in wordlist:
+        checked_text.append(f"*{char}*")
+    else:
+        checked_text.append(char)
+
+print(" ".join(checked_text))
