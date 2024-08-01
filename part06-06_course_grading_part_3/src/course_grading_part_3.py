@@ -1,5 +1,4 @@
 # write your solution here
-# # write your solution here
 file_name1 = input("Student information: ")
 file_name2 = input("Exercises completed: ")
 file_name3 = input("Exam final_point: ")
