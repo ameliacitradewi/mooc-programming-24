@@ -28,10 +28,7 @@ def generate_strong_password(length, include_numbers, include_specials):
     
     while len(password_chars) < length:
         password_chars.append(random.choice(all_allowed_chars))
-    
-    # Shuffle the list to ensure randomness
-    random.shuffle(password_chars)
-    
+        
     # Join the list into a string to form the final password
     return ''.join(password_chars)
 
