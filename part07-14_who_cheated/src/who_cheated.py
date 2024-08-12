@@ -6,14 +6,14 @@ def cheaters():
     start_times = {}
     cheaters_list = set()
 
-    with open('start_times.csv', 'r') as f:
-        reader = csv.reader(f, delimiter=';')
+    with open('start_times.csv', 'r') as file:
+        reader = csv.reader(file, delimiter=';')
         for row in reader:
             name, start_time = row
             start_times[name] = datetime.strptime(start_time, '%H:%M')
 
-    with open('submissions.csv', 'r') as f:
-        reader = csv.reader(f, delimiter=';')
+    with open('submissions.csv', 'r') as file:
+        reader = csv.reader(file, delimiter=';')
         for row in reader:
             name, task, points, submission_time = row
             submission_time = datetime.strptime(submission_time, '%H:%M')
