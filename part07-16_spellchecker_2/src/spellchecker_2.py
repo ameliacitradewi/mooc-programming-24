@@ -27,6 +27,3 @@ print("suggestions:")
 for words in misspelled:
     suggestions = difflib.get_close_matches(words, wordlist)
     print(f"{words}: {', '.join(suggestions)}")
-
-
-
