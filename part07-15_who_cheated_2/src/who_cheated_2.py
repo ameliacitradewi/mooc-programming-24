@@ -24,6 +24,7 @@ def final_points():
 
             # Check if the submission is within the allowed time frame
             if time_diff <= timedelta(hours=3):
+                # Check if there are multiple submission. If so, the highest number of points is taken
                 if name not in submissions:
                     submissions[name] = {}
                 if task not in submissions[name]:
