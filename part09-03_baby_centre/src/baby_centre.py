@@ -14,4 +14,8 @@ class BabyCentre:
 
     def weigh(self, person: Person):
         # return the weight of the person passed as an argument
-        return -1
+        return person.weight
+    
+    def feed(self, person: Person):
+        person.weight += 1
+
