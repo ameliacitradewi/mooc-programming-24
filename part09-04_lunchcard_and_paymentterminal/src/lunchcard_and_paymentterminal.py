@@ -1,5 +1,4 @@
 # WRITE YOUR SOLUTION HERE:
-
 class LunchCard:
     def __init__(self, balance: float):
         self.balance = balance
@@ -8,9 +7,13 @@ class LunchCard:
         self.balance += amount
 
     def subtract_from_balance(self, amount: float):
-        pass
         # The amount should be subtracted from the balance only if there is enough money on the card
         # If the payment is successful, the method returns True, and otherwise it returns False
+        if self.balance - amount >= 0:
+            self.balance -= amount
+            return True
+        else:
+            return False
 
 class PaymentTerminal:
     def __init__(self):
