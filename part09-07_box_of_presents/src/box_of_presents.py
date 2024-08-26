@@ -21,12 +21,12 @@ class Box:
         return sum(weight)
 
 # Example Usage
-# book = Present("ABC Book", 2)
+book = Present("ABC Book", 2)
 
-# box = Box()
-# box.add_present(book)
-# print(box.total_weight())
+box = Box()
+box.add_present(book)
+print(box.total_weight())
 
-# cd = Present("Pink Floyd: Dark Side of the Moon", 1)
-# box.add_present(cd)
-# print(box.total_weight())
+cd = Present("Pink Floyd: Dark Side of the Moon", 1)
+box.add_present(cd)
+print(box.total_weight())
