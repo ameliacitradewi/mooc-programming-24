@@ -2,6 +2,8 @@
 class Recording:
     def __init__(self, length: int):
         self.__length = length
+        if length < 0:
+            raise ValueError("The amount must be bigger than zero")
     
     @property
     def length(self):
@@ -14,7 +16,7 @@ class Recording:
         else:
             raise ValueError("The amount must be bigger than zero")
 
-# Example Usage
+# # Example Usage
 the_wall = Recording(43)
 print(the_wall.length)
 the_wall.length = 44
