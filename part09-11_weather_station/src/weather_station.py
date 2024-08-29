@@ -1,22 +1,22 @@
 # WRITE YOUR SOLUTION HERE:
 class WeatherStation:
   def __init__(self, name: str):
-      self._name = name
-      self._observations = []
+      self.__name = name
+      self.__observations = []
 
   def add_observation(self, observation: str):
-      self._observations.append(observation)
+      self.__observations.append(observation)
 
   def latest_observation(self) -> str:
-      if self._observations:
-          return self._observations[-1]
+      if self.__observations:
+          return self.__observations[-1]
       return ""
 
   def number_of_observations(self) -> int:
-      return len(self._observations)
+      return len(self.__observations)
 
   def __str__(self) -> str:
-      return f"{self._name}, {self.number_of_observations()} observations"
+      return f"{self.__name}, {self.number_of_observations()} observations"
 
 # Example usage
 # station = WeatherStation("Houston")
