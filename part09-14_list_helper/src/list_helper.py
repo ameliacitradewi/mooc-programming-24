@@ -38,6 +38,6 @@ class ListHelper:
         return count_doubles
 
 # Example Usage
-# numbers = [1, 1, 2, 1, 3, 3, 4, 5, 5, 5, 6, 5, 5, 5]
-# print(ListHelper.greatest_frequency(numbers))
-# print(ListHelper.doubles(numbers))  
+numbers = [1, 1, 2, 1, 3, 3, 4, 5, 5, 5, 6, 5, 5, 5]
+print(ListHelper.greatest_frequency(numbers))
+print(ListHelper.doubles(numbers))
