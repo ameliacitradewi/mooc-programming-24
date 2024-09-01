@@ -1,4 +1,4 @@
-# TEE RATKAISUSI TÄHÄN:
+# Write your solution here:
 class ComputerGame:
     def __init__(self, name: str, publisher: str, year: int):
         self.name = name
