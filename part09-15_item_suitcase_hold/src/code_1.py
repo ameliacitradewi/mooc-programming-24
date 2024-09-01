@@ -62,7 +62,6 @@ class CargoHold:
         word = "suitcase" if suitcase_count == 1 else "suitcases"
         remaining_weight = self.max_cargo - self.weight()
         return f"{suitcase_count} {word}, space for {remaining_weight} kg"
-        
 
     def print_items(self):
         for suitcase in self.suitcases:
