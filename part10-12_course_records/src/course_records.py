@@ -1,51 +1,42 @@
 # Write your solution here:
 class Course:
     def __init__(self, name: str, grade: int, credits: int):
-        self._name = name
-        self._grade = grade
-        self._credits = credits
-
-    def name(self):
-        return self._name
-
-    def grade(self):
-        return self._grade
-
-    def credits(self):
-        return self._credits
+        self.name = name
+        self.grade = grade
+        self.credits = credits
 
     def update_grade(self, new_grade: int):
-        if new_grade > self._grade:
-            self._grade = new_grade
+        if new_grade > self.grade:
+            self.grade = new_grade
 
-class CourseRecords(Course):
+class CourseRecords:
     def __init__(self):
-        self._courses = {}
+        self.courses = {}
 
     def add_courses(self, name: str, grade: int, credits: int):
-        if name not in self._courses:
-            self._courses[name] = Course(name, grade, credits)
+        if name not in self.courses:
+            self.courses[name] = Course(name, grade, credits)
         else:
-            self._courses[name].update_grade(grade)
+            self.courses[name].update_grade(grade)
 
     def get_courses(self, name: str):
-        if name not in self._courses:
-            return "no entry for this course"
-        course = self._courses[name]
-        return f"{course.name()} ({course.credits()} cr) grade {course.grade()}"
+        if name in self.courses:
+            course = self.courses[name]
+            return f"{course.name} ({course.credits} cr) grade {course.grade}"
+        return "no entry for this course"        
 
     def statistics(self):
-        if not self._courses:
+        if not self.courses:
             return "You are not taking any courses yet."
         
-        total_courses = len(self._courses)
-        total_credits = sum(course.credits() for course in self._courses.values())
-        mean_grade = sum(course.grade() for course in self._courses.values()) / total_courses
+        total_courses = len(self.courses)
+        total_credits = sum(course.credits for course in self.courses.values())
+        mean_grade = sum(course.grade for course in self.courses.values()) / total_courses
 
         # Grade distribution
         grade_distribution = {5: 0, 4: 0, 3: 0, 2: 0, 1: 0}
-        for course in self._courses.values():
-            grade_distribution[course.grade()] += 1
+        for course in self.courses.values():
+            grade_distribution[course.grade] += 1
 
         # Building statistics output
         result = f"{total_courses} completed courses, a total of {total_credits} credits\n"
@@ -58,7 +49,7 @@ class CourseRecords(Course):
 
 class CourseApplication:
     def __init__(self):
-        self._study_record = CourseRecords()
+        self.course_records = CourseRecords()
 
     def help(self):
         print("1 add course")
@@ -70,14 +61,14 @@ class CourseApplication:
         name = input("course: ")
         grade = int(input("grade: "))
         credits = int(input("credits: "))
-        self._study_record.add_courses(name, grade, credits)
+        self.course_records.add_courses(name, grade, credits)
 
     def get_courses(self):
         name = input("course: ")
-        print(self._study_record.get_courses(name))
+        print(self.course_records.get_courses(name))
 
     def statistics(self):
-        print(self._study_record.statistics())
+        print(self.course_records.statistics())
 
     def execute(self):
         self.help()
