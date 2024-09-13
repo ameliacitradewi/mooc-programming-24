@@ -28,6 +28,7 @@ class BookOrder:
     def add_order(self, description, programmer, workload):
         new_book = Book(description, programmer, workload)
         self.orders.append(new_book)
+        print("added!")
     
     def list_unfinished(self):
         list_unfinished = [order for order in self.orders if not order.is_finished()]
@@ -38,36 +39,35 @@ class BookOrder:
         print('\n'.join(str(order) for order in list_finished) or "no finished tasks")
 
     def mark_as_finished(self, id):
-        id = id
-
         for order in self.orders:
-            if order.id != id:
-                print("erroneous input")
-            else:
+            if order.id == id:
                 order.mark_as_finished()
                 print("marked as finished")        
+                return
+        print("erroneous input")                
 
     def programmers(self):
         list_programmers = list(set(order.programmer for order in self.orders))
         print('\n'.join(str(programmer) for programmer in list_programmers) or "erroneous input")
 
     def status_of_programmer(self, programmer):
-        programmer = programmer
         finished = 0
         not_finished = 0
         hours_done = 0
         hours_to_go = 0
 
         for order in self.orders:
-            if order.programmer != programmer:
-                print("erroneous input")
-            else:
+            if order.programmer == programmer:
                 if order.is_finished():
                     finished += 1
                     hours_done += order.workload
                 else:
                     not_finished += 1
                     hours_to_go += order.workload
+
+        if finished == 0 and not_finished == 0:
+            print("erroneous input")
+        else:
             print(f"tasks: finished {finished} not finished {not_finished}, hours: done {hours_done} scheduled {hours_to_go}")
     
 class BookApplication:
@@ -87,8 +87,16 @@ class BookApplication:
     def add_entry_order(self):
         description = input("description: ")
         progwork = input("programmer and workload estimate: ")
-        programmer, workload = [part for part in progwork.split()]
-        workload = int(workload)
+        parts = progwork.split()
+        if len(parts) != 2:
+            print("erroneous input")
+            return
+        programmer = parts[0]
+        try:
+            workload = int(parts[1])
+        except ValueError:
+            print("erroneous input")
+            return
         self.book_order.add_order(description, programmer, workload)
 
     def execute(self):
@@ -101,14 +109,16 @@ class BookApplication:
                 break
             elif command == "1":
                 self.add_entry_order()
-                print("added!")
             elif command == "2":
                 self.book_order.list_finished()
             elif command == "3":
                 self.book_order.list_unfinished()
             elif command == "4":
-                id = int(input("id: "))
-                self.book_order.mark_as_finished(id)
+                try:
+                    id = int(input("id: "))
+                    self.book_order.mark_as_finished(id)
+                except ValueError:
+                    print("erroneous input")
             elif command == "5":
                 self.book_order.programmers()
             elif command == "6":
@@ -117,5 +127,6 @@ class BookApplication:
             else:
                 print("erroneous input")
 
+# Testing Case
 application = BookApplication()
 application.execute()
