@@ -7,9 +7,11 @@ class Node:
         self.right_child = right_child
         
 def greatest_node(root: Node):
+    # Base case
     if root is None:
         return float('-inf')
 
+    # Recurssion
     left_max = greatest_node(root.left_child)
     right_max = greatest_node(root.right_child)
 
