@@ -19,3 +19,17 @@ class Task:
     def __str__(self):
         status = "FINISHED" if self.is_finished() else "NOT FINISHED"
         return f"{self.id}: {self.description} ({self.workload} hours), programmer {self.programmer} {status}"
+
+class OrderBook:
+    def __init__(self):
+        self.orders = set()
+
+    def add_order(self, description, programmer, workload):
+        new_task = Task(description, programmer, workload)
+        self.orders.add(new_task)
+
+    def all_orders(self):
+        return list(set(self.orders))
+
+    def programmers(self):
+        return list(set(order.programmer for order in self.orders))
