@@ -1,11 +1,11 @@
 # Write your solution here:
 def sort_by_seasons(items: list):
-    # another way
-    # def order_by_seasons(item: dict):
-    #     return item.get('seasons')
+    def order_by_seasons(item: dict):
+        return item.get('seasons')
     
-    # return sorted(items, key= order_by_seasons)
-    return sorted(items, key=lambda item: item['seasons'])
+    return sorted(items, key= order_by_seasons)
+    # another way (in next lesson)
+    # return sorted(items, key=lambda item: item['seasons'])
 
 
 # Example Test

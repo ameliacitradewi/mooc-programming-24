@@ -1,11 +1,11 @@
 # Write your solution here:
 def sort_by_remaining_stock(items: list):
-    # another way
-    # def order_by_remaining_stock(item: tuple):
-    #     return item[2]
+    def order_by_remaining_stock(item: tuple):
+        return item[2]
     
-    # return sorted(items, key= order_by_remaining_stock)
-    return sorted(items, key=lambda item: item[2])
+    return sorted(items, key= order_by_remaining_stock)
+    # another way (in next lesson)
+    # return sorted(items, key=lambda item: item[2])
 
 # Test Case
 products = [("banana", 5.95, 12), ("apple", 3.95, 3), ("orange", 4.50, 2), ("watermelon", 4.95, 22)]
