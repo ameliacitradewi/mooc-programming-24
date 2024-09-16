@@ -1,5 +1,6 @@
 # TEE RATKAISUSI TÄHÄN:
 def sort_by_ratings(items: list):
+    # another way
     # def order_by_ratings(item: dict):
     #     return item.get('rating')
 

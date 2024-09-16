@@ -12,9 +12,12 @@ def sort_by_length(routes: list):
     return sorted(routes, key=lambda route: route.length, reverse=True)
 
 def sort_by_difficulty(routes: list):
+    # another way
+    # routes_by_length = sort_by_length(routes)
+    # return sorted(routes_by_length, key=lambda route: route.grade, reverse=True)
     return sorted(routes, key=lambda route: (route.grade, route.length), reverse=True)
 
-# Example Case
+Example Case
 r1 = ClimbingRoute("Edge", 38, "6A+")
 r2 = ClimbingRoute("Smooth operator", 11, "7A")
 r3 = ClimbingRoute("Synchro", 14, "8C+")

@@ -1,5 +1,6 @@
 # Write your solution here:
 def sort_by_remaining_stock(items: list):
+    # another way
     # def order_by_remaining_stock(item: tuple):
     #     return item[2]
     
