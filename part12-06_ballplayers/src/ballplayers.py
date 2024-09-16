@@ -10,7 +10,6 @@ class BallPlayer:
         return (f'BallPlayer(name={self.name}, number={self.number}, '
             f'goals={self.goals}, passes={self.passes}, minutes={self.minutes})')
 
-
 # Write your solution here
 def most_goals(players: list):
     return max(players, key=lambda player: player.goals).name
