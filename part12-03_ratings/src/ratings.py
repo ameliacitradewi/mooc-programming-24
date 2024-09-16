@@ -1,9 +1,10 @@
 # TEE RATKAISUSI TÄHÄN:
 def sort_by_ratings(items: list):
-    def order_by_ratings(item: dict):
-        return item.get('rating')
+    # def order_by_ratings(item: dict):
+    #     return item.get('rating')
 
-    return sorted(items, key= order_by_ratings, reverse= True)
+    # return sorted(items, key= order_by_ratings, reverse= True)
+    return sorted(items, key=lambda item: item['rating'], reverse=True)
 
 # Example Case
 shows = [{ "name": "Dexter", "rating" : 8.6, "seasons":9 }, { "name": "Friends", "rating" : 8.9, "seasons":10 },  { "name": "Simpsons", "rating" : 8.7, "seasons":32 }  ]
