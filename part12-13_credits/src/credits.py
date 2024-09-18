@@ -31,5 +31,5 @@ print(credit_sum)
 ag = average([s1, s2, s3])
 print(ag)
 
-# Eventhough this excercise could be done using recurssion,
-# the task spesifically asks you to use filter and reduce
+# Eventhough this excercise could be done using recursion,
+# this task spesifically asks you to use filter and reduce
