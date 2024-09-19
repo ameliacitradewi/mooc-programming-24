@@ -49,7 +49,7 @@ class NHLStats:
 
     def players_in_team(self, team):
         return sorted(filter(lambda player: player.team == team.upper(), self.players), key=lambda player: player.points(), reverse=True)
-        # return [player for player in self.players if player.team == team.upper()]
+        # return sorted([player for player in self.players if player.team == team.upper()], key=lambda player: player.points(), reverse=True)
         # above is another way, same result
 
     def players_from_countries(self, country):
