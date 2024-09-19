@@ -5,34 +5,28 @@ import sys
 
 pygame.init()
 
-# Constants
 WINDOW_WIDTH, WINDOW_HEIGHT = 640, 480
 PLAYER_SIZE = 50
 ENEMY_SIZE = 50
 COIN_SIZE = 30
 TIME_LIMIT = 30  # in seconds
 
-# Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-# Load images
 robot = pygame.image.load("robot.png")
 coin = pygame.image.load("coin.png")
 monster = pygame.image.load("monster.png")
 door = pygame.image.load("door.png")
 
-# Scale images to desired sizes
 robot = pygame.transform.scale(robot, (PLAYER_SIZE, PLAYER_SIZE))
 coin = pygame.transform.scale(coin, (COIN_SIZE, COIN_SIZE))
 monster = pygame.transform.scale(monster, (ENEMY_SIZE, ENEMY_SIZE))
 door = pygame.transform.scale(door, (PLAYER_SIZE, PLAYER_SIZE))
 
-# Initialize screen
 window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("Coin Collector")
 
-# Initialize game variables
 player_x = WINDOW_WIDTH // 2
 player_y = WINDOW_HEIGHT // 2
 player_speed = 5
@@ -55,7 +49,6 @@ def draw_window():
     for mx, my in monsters:
         window.blit(monster, (mx, my))
     
-    # Draw the score and time remaining
     score_text = font.render(f"Score: {score}", True, WHITE)
     window.blit(score_text, (10, 10))
     
@@ -77,7 +70,6 @@ def move_player(keys):
     if keys[pygame.K_DOWN]:
         player_y += player_speed
     
-    # Ensure player stays within window boundaries
     player_x = max(0, min(player_x, WINDOW_WIDTH - PLAYER_SIZE))
     player_y = max(0, min(player_y, WINDOW_HEIGHT - PLAYER_SIZE))
 
@@ -86,18 +78,15 @@ def check_collisions():
     global coins
     global monsters
 
-    # Check for coin collisions
     coins_to_remove = []
     for i, (cx, cy) in enumerate(coins):
         if player_x < cx + COIN_SIZE and player_x + PLAYER_SIZE > cx and player_y < cy + COIN_SIZE and player_y + PLAYER_SIZE > cy:
             coins_to_remove.append(i)
             score += 1
     
-    # Remove collected coins
     for i in reversed(coins_to_remove):
         coins.pop(i)
 
-    # Check for monster collisions
     for mx, my in monsters:
         if player_x < mx + ENEMY_SIZE and player_x + PLAYER_SIZE > mx and player_y < my + ENEMY_SIZE and player_y + PLAYER_SIZE > my:
             pygame.quit()
