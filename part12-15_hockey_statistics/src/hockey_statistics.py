@@ -1,6 +1,5 @@
 # Write your solution here
 import json
-import re
 
 class Player:
     def __init__(self, name, nationality, assists, goals, penalties, team, games):
@@ -16,7 +15,7 @@ class Player:
         return self.goals + self.assists
 
     def __str__(self):
-        return f"{self.name:<22}{self.team:<5}{self.goals:>3} + {self.assists:>2} = {self.points():>3}"
+        return f"{self.name:21}{self.team:3}{self.goals:4} + {self.assists:2} = {self.points():3}"
 
 class NHLStats:
     def __init__(self, filename):
@@ -27,6 +26,7 @@ class NHLStats:
         try:
             with open(filename, 'r') as file:
                 data = json.load(file)
+                print(f"read the data of {len(data)} players\n")
                 return [Player(**player) for player in data]
         except FileNotFoundError:
             raise FileNotFoundError("The file was not found")
@@ -48,7 +48,7 @@ class NHLStats:
         # using set-map because we only want to return unique country name sort by alphabethic, no need to return player
 
     def players_in_team(self, team):
-        return filter(lambda player: player.team == team.upper(), self.players)
+        return sorted(filter(lambda player: player.team == team.upper(), self.players), key=lambda player: player.points(), reverse=True)
         # return [player for player in self.players if player.team == team.upper()]
         # above is another way, same result
 
@@ -66,17 +66,12 @@ class NHLStats:
         return highest_goals[:shown]
 
 class NHLStatsApp:
-    def __init__(self):
-        # self.NHLStats = NHLStats()
-        pass
-
     def help(self):
         print("commands:\n0 quit\n1 search for player\n2 teams\n3 countries\n4 players in team\n5 players from country\n6 most points\n7 most goals")
 
     def execute(self):
         filename = input("file name: ")
         nhl_stats = NHLStats(filename)
-        print(f"read the data of {len(nhl_stats.players)} players\n")
         self.help()
 
         while True:
@@ -125,6 +120,5 @@ class NHLStatsApp:
                 print("command invalid!")
 
 # Run The Application
-application = NHLStatsApp()
-application.execute()
-        
+app = NHLStatsApp()
+app.execute()
