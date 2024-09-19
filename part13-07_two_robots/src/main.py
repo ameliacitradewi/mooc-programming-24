@@ -24,7 +24,7 @@ while True:
 
     window.fill((0, 0, 0))
     window.blit(robot1, (x, y))
-    window.blit(robot2, ((x * 2), (y * 2)))
+    window.blit(robot2, ((x * 2), (y * 2)))  # Doubling the speed
     pygame.display.flip()
 
     clock.tick(60)
