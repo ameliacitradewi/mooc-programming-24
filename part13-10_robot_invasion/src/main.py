@@ -50,15 +50,10 @@ while running:
                 # Remove robot if it goes off screen
                 robots.remove(robot_data)
 
-    # Fill the window with black
     window.fill((0, 0, 0))
 
-    # Draw robots
     for robot_data in robots:
         window.blit(robot, (robot_data['x'], robot_data['y']))
 
-    # Update the display
     pygame.display.flip()
-
-    # Control the frame rate
     clock.tick(60)
