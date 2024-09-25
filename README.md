@@ -62,8 +62,8 @@ Dive into each module to see my answers and notes:
 
 and many more 🧠!
 
-## 🌟 Repository Status: On Progress 🔥
-This repository is still a work in progress. Python is vast and versatile, and there's more than one way to crack a code! If you have different solutions or better ways to tackle the problems, I'd love to see them. Dive in, explore, and if you think there’s another—or a better—way, share your thoughts! After all, the beauty of programming lies in its diversity of approaches.
+## 🌟 Repository Status: Done, but it could be even better! 🔥
+This repository is done for all excercise in The Advance Programming Course. Python is vast and versatile, and there's more than one way to crack a code! If you have different solutions or better ways to tackle the problems, I'd love to see them. Dive in, explore, and if you think there’s another—or a better—way, share your thoughts! After all, the beauty of programming lies in its diversity of approaches.
 
 ![](https://github.com/ameliacitradewi/ameliacitradewi/blob/main/Quotes.png)
 > Also, it's okay to take a break
