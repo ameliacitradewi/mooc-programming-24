@@ -62,7 +62,7 @@ Dive into each module to see my answers and notes:
 
 and many more 🧠!
 
-## 🌟 Repository Status: Done, but there's always room for improvement! 🔥
+## 🌟 Repository: Done, but there's always room for improvement! 🔥
 This repository contains solutions for all exercises in the Python Advanced Programming Course. Python is vast and versatile, and there's more than one way to crack a code! If you have different solutions or better ways to tackle the problems, I'd love to see them. Dive in, explore, and if you think there’s another—or a better—way, share your thoughts! After all, the beauty of programming lies in its diversity of approaches.
 
 ![](https://github.com/ameliacitradewi/ameliacitradewi/blob/main/Quotes.png)
